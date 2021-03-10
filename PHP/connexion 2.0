@@ -1,0 +1,77 @@
+<?php
+
+
+ $bdd = new PDO("mysql:host=localhost;dbname=gradien","root","morgan");
+   if (isset($_POST["submit"])){
+    //  mes Variables
+                @$email = $_POST["email"];
+                @$mdp = $_POST["mdp"];
+                
+               
+               
+         
+// on verifie si les champs sont vide ou pas
+      if(empty($email) && empty($mdp)){
+             echo "<p style= 'color:red'> veuillez remplir les champs obligatoire </p>";
+         }
+          else{
+            //   on verifie si l'email est correct
+                 if(filter_var($email, FILTER_VALIDATE_EMAIL) && !empty($mdp)){
+                         
+                          $requser = $bdd->prepare("SELECT * FROM inscription WHERE email = ? AND mdp = ?");
+                          $requser->execute(array($email, $mdp));
+                          $userexist = $requser->rowCount();
+                          
+                          if($userexist == 1)
+                          { 
+                            $mdp = password_hash($_POST['mdp'], PASSWORD_DEFAULT);
+                            $query = $bdd->prepare("INSERT INTO connexion(email, mdp) VALUE(?,?)");
+                            $query->execute([$email, $mdp]);
+                            echo " <p style= 'color:green'> Bienvenu! </p> ";
+                           
+                     
+                          }
+                          else
+                          {
+                            echo "<p style= 'color:red'> Mauvais mail ou mots de passe ! </p>";
+                          }
+
+                       } else{
+                           echo "<p style= 'color:red'> veuillez remplir les champs obligatoire! </p>";
+                       }
+
+
+                   }         
+                }                                     
+
+                                            
+?>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+
+    <title>connexion</title>
+   
+</head>
+<body>
+<div class="container">
+    <h1>Connexion</h1>
+    
+    <form action="" method="POST">
+        
+       
+        <input type="text" name="email" placeholder="Email*">
+        <input type="password" name="mdp" placeholder="Password*">
+        <button  type="submit" name="submit" class="">Valider</button>
+        
+    </form>
+    <a href="#">Mots de passe oublié ?</a>
+    <p>Vous n'avez pas encore de compte ?</p><a href="#">Inscrivez-vous ici</a>
+ 
+
+    </div>
+</body>
+</html>

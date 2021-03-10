@@ -1,0 +1,90 @@
+<?php  
+  $bdd = new PDO("mysql:host=localhost;dbname=gradien","root","morgan");
+ if (isset($_POST["submit"])){
+    //  mes Variables
+                @$nom = $_POST["nom"];
+                @$prenom = $_POST["prenom"];
+                @$email = $_POST["email"];
+                @$date = $_POST["datedenaissance"];
+                @$mdp = $_POST["mdp"];
+                @$mdp2 = $_POST["mdp2"];
+                @$a = rand (100000,400000);
+
+// on verifie si les champs sont vide ou pas
+if( empty($mdp) && empty($mdp2) && empty($nom) && empty($email) && empty($prenom) && empty($date)){
+    echo "<p style= 'color:red'> veuillez remplir les champs obligatoire </p>";
+}
+  else{
+    //   on verifie si l'email est correct
+         if(filter_var($email, FILTER_VALIDATE_EMAIL)){
+             if(empty($nom) && empty($prenom)){
+                 echo " <p style= 'color:red'>veuillez remplir les champs obligatoire ! </p>";
+             }
+             else{
+                  if($mdp == $mdp2 && !empty($mdp)){ 
+                    $options = [
+                        'cost' => 12,
+                    ];
+                     $hashpass = password_hash($mdp, PASSWORD_BCRYPT, $options);   
+                
+               
+                $query = $bdd->prepare("INSERT INTO inscription(nom, prenom, email, datedenaissance, mdp, numero_dossier) VALUE(?, ?, ?, ?, ?, ?)");
+                $query->execute([ $nom, $prenom, $email, $date, $mdp, $a]);
+                    echo " <p style= 'color:green'> Bienvenu! </p> ";
+                    
+
+            }
+            else{
+                 echo "<p style= 'color:red'> Les mots de passe ne sont pas identique ! </p>";
+            }
+         
+            
+
+               }
+
+             }else{
+                   echo "<p style= 'color:red'> Email invalide ! </p>";
+               }
+
+           
+
+           }         
+       }                                     
+
+
+
+
+
+
+
+
+
+?>
+<!-- FIN PHP -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+   
+    <title>Inscription</title>
+  
+</head>
+<body>-
+    <div class="container">
+    <h1>Inscription</h1>
+<form action="" method="POST">
+        <input type="text" name="nom"  class="#" placeholder="nom*">
+        <input type="text" name="prenom" class="#" placeholder="prénom*">
+        <input type="text" name="email" class="#" placeholder="email*">
+        <input type="date" name="datedenaissance" class="#" placeholder="">
+        <input type="password" name="mdp" class="#" placeholder="Choose a password(at least 6 characters)*">
+        <input type="password" name="mdp2" class="#" placeholder="Confirm your password*">
+        <button  type="submit" name="submit" class="#">Valider</button>
+        
+    </form>
+</div>
+    
+</body>
+</html>

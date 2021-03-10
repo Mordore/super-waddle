@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .container {
+        background-color: red;
+        display: inline-flex;
+        justify-content: space-around;
+        align-items: center;
+      }
+      .carte {
+        width: 30%;
+        background: white;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+      }
+      img {
+        width: 100%;
+      }
+
+      @media all and (max-width: 965px) {
+        .container {
+          display: flex;
+          flex-direction: column;
+        }
+        .carte {
+          width: 80%;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="carte">
+        <div class="image"><img src="./IMAGES/jonquille.jpg" alt="FLUR" /></div>
+        <div class="texte">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas
+          excepturi enim quaerat aspernatur nobis doloribus ullam. Sit similique
+          blanditiis atque praesentium a officia at voluptatum et, soluta
+          incidunt ipsum non?Corrupti nulla placeat error aliquam vero
+          perferendis eveniet eius veniam qui quasi at assumenda provident ad
+          voluptates enim asperiores quam quis explicabo, dolores magni totam
+          corporis. Harum repellat eligendi nisi.
+        </div>
+      </div>
+      <div class="carte">
+        <div class="image"><img src="./IMAGES/jonquille.jpg" alt="FLUR" /></div>
+        <div class="texte">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel excepturi
+          rem quod laboriosam officia! Quod quae sed ab mollitia quia!
+          Reprehenderit inventore accusantium dicta id, esse iste voluptate
+          magni illum? Corporis amet dolorem explicabo quibusdam molestias ea
+          cupiditate, alias ullam quos optio doloribus facere iusto consequuntur
+          asperiores eum blanditiis? Delectus cupiditate vitae ut veniam,
+          perspiciatis et laborum ex optio nam. Ullam, mollitia accusantium odit
+        </div>
+      </div>
+      <div class="carte">
+        <div class="image"><img src="./IMAGES/jonquille.jpg" alt="FLUR" /></div>
+        <div class="texte">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas
+          excepturi enim quaerat aspernatur nobis doloribus ullam. Sit similique
+          blanditiis atque praesentium a officia at voluptatum et, soluta
+          incidunt ipsum non?Corrupti nulla placeat error aliquam vero
+          perferendis eveniet eius veniam qui quasi at assumenda provident ad
+          voluptates enim asperiores quam quis explicabo, dolores magni totam
+          corporis. Harum repellat eligendi nisi.
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Document</title>
+  </head>
+  <body>
+    <main class="top">
+      <header>
+        <div class="topnav">
+          <ul>
+            <li><a href="default.asp">ABOUT</a></li>
+            <li><a href="news.asp">ARTICLES</a></li>
+            <li><a href="contact.asp">SUBSCRIBE</a></li>
+          </ul>
+          <h2>LomBok</h2>
+
+          <div class="progress-container">
+            <div class="progress-bar" id="myBar"></div>
+          </div>
+        </div>
+
+        <div class="title_top">
+          <h1 style="font-size: 8vw">Lombok</h1>
+          <h3 style="font-size: 2vw">Holistic Health</h3>
+        </div>
+      </header>
+    </main>
+    <main class="mid">
+      <div class="title_mid">LATEST ARTICLES</div>
+      <hr />
+      <article>
+        <div class="art1">
+          <div class="art1_img"></div>
+          <h2>About</h2>
+          <h3 style="font-size: 1.1vw">
+            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Rem
+            mollitia iure illo id commodi distinctio adipisci, sapiente saepe
+            maxime voluptates ullam magni molestiae perspiciatis nihil atque
+            ratione esse. Labore, debitis.
+          </h3>
+          <hr />
+        </div>
+        <div class="art2">
+          <div class="art2_img"></div>
+          <h2>Fleur</h2>
+          <h3 style="font-size: 1.1vw">
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iusto
+            veritatis molestias architecto cupiditate minima adipisci sequi
+            praesentium? Hic temporibus saepe delectus debitis magnam quos
+            voluptatem sunt accusamus recusandae amet? Provident!
+          </h3>
+          <hr />
+        </div>
+        <div class="art3">
+          <div class="art3_img"></div>
+          <h2>Fleur2</h2>
+          <h3 style="font-size: 1.1vw">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam,
+            sit quia eligendi obcaecati debitis impedit eos accusamus possimus,
+            nobis nesciunt non rem dolores, in animi consectetur asperiores
+            aliquid cum vel.Quaerat iusto pariatur laudantium in corporis odio
+          </h3>
+          <hr />
+        </div>
+      </article>
+    </main>
+    <div class="photo_text">
+      <h1>ABOUT</h1>
+      <p style="font-size: 1.2vw">
+        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Autem animi
+        culpa voluptatum ut sed adipisci vel eveniet consequatur, recusandae
+        iure nesciunt rerum. Nesciunt facere beatae nostrum assumenda soluta
+        iure harum. Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+        Doloribus impedit nemo blanditiis dolorum maxime. Tempora, quis? Sed
+        consectetur nemo enim repudiandae, cupiditate nisi ut facere quas
+        numquam debitis quisquam quibusdam! Lorem ipsum, dolor sit amet
+        consectetur adipisicing elit. Odio reiciendis molestiae suscipit
+        deleniti officiis delectus veritatis. Aliquam obcaecati maiores
+        quibusdam inventore soluta. Asperiores atque mollitia quisquam sint
+        omnis consequuntur veniam.
+      </p>
+
+      <div class="img1"></div>
+    </div>
+    <footer>
+      <div class="reseaux">
+        <div class="f"></div>
+        <div class="t"></div>
+        <div class="s"></div>
+        <div class="y"></div>
+        <div class="m"></div>
+      </div>
+    </footer>
+  </body>
+</html>
